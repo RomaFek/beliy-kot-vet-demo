@@ -66,11 +66,11 @@
 /* Пояснения раскрываются под названием услуги и не перекрывают цену. */
 .price-line{align-items:flex-start}
 .price-help{min-width:0;flex:1}
-.price-help summary{display:inline-flex;align-items:center;gap:10px;max-width:100%;cursor:pointer;list-style:none;color:var(--text)}
+.price-help summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:20px;width:100%;cursor:pointer;list-style:none;color:var(--text)}
 .price-help summary::-webkit-details-marker{display:none}
 .price-help summary>span:first-child{min-width:0}
-.info-icon{display:inline-grid;place-items:center;flex:none;width:22px;height:22px;border:1px solid #8bab98;border-radius:50%;color:var(--ink);font:700 13px/1 var(--serif);transition:background .2s,color .2s}
-.price-help summary:hover .info-icon,.price-help[open] .info-icon{background:var(--ink);color:#fff}
+.price-more{color:#527b60;font-size:13px;font-weight:700;line-height:1.5;white-space:nowrap;text-decoration:underline;text-decoration-color:#a6c2ab;text-underline-offset:3px;transition:color .2s,text-decoration-color .2s}
+.price-help summary:hover .price-more,.price-help[open] .price-more{color:var(--ink);text-decoration-color:currentColor}
 .price-help summary:focus-visible{outline:3px solid var(--orange);outline-offset:4px;border-radius:3px}
 .price-help-content{max-width:650px;margin:12px 0 2px;padding:15px 18px;border-left:2px solid #8bab98;border-radius:0 6px 6px 0;background:#f3f7f2;color:#50665a;font-size:14px;line-height:1.55}
 .price-help-content p{margin:0 0 8px}
@@ -90,6 +90,7 @@
 @media(max-width:700px){
   .topbar{font-size:12px;line-height:1.35}
   .price-line{gap:12px}
+  .price-help summary{grid-template-columns:minmax(0,1fr);gap:4px}
   .price-help-content{font-size:13px}
   .review-card-footer{padding-right:0}
   .review-card-footer a{white-space:normal}
